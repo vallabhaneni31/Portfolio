@@ -1,0 +1,43 @@
+.ribbon {
+  overflow: hidden;
+  padding: clamp(24px, 5vh, 64px) 0;
+  background: var(--ink);
+  border-block: 1px solid var(--line);
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  font-family: var(--font-display);
+  font-variation-settings: 'wdth' 100, 'opsz' 96;
+  font-weight: 800;
+  font-size: clamp(3.4rem, 11vw, 11rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+.track span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  padding-right: 0.35em;
+}
+
+.outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(232, 234, 240, 0.5);
+}
+.solid {
+  color: var(--bone);
+}
+
+.sep {
+  display: inline-block;
+  width: 0.22em;
+  height: 0.22em;
+  background: var(--blue);
+  transform: rotate(45deg);
+  box-shadow: 0 0 24px var(--blue);
+}

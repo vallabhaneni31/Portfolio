@@ -1,0 +1,83 @@
+.wrap {
+  position: relative;
+  background: var(--ink);
+  overflow: hidden;
+}
+
+.pin {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+}
+
+.track {
+  display: flex;
+  align-items: stretch;
+  gap: clamp(32px, 5vw, 96px);
+  padding: 0 var(--gutter);
+  will-change: transform;
+}
+
+.intro {
+  flex: 0 0 min(46vw, 640px);
+  align-self: center;
+}
+
+.title {
+  margin-top: 18px;
+  font-size: clamp(2.6rem, 6vw, 6rem);
+}
+
+.hint {
+  margin-top: 28px;
+}
+
+.card {
+  flex: 0 0 min(42vw, 560px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 28px;
+  min-height: min(68vh, 560px);
+  padding: clamp(22px, 3vw, 44px);
+  border-left: 1px solid var(--blue);
+  background: linear-gradient(120deg, rgba(61, 123, 255, 0.07), transparent 60%);
+}
+
+.card h3 {
+  font-size: clamp(2rem, 3.6vw, 3.6rem);
+  letter-spacing: -0.03em;
+  line-height: 1.02;
+}
+
+.body {
+  max-width: 40ch;
+  color: var(--bone);
+  font-size: 1.1em;
+}
+
+.proof {
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  color: var(--mute);
+  font-size: 0.95em;
+}
+
+@media (max-width: 899px), (prefers-reduced-motion: reduce) {
+  .pin {
+    display: block;
+    padding: clamp(96px, 16vh, 200px) 0;
+  }
+  .track {
+    flex-direction: column;
+    gap: 28px;
+  }
+  .intro,
+  .card {
+    flex-basis: auto;
+    width: 100%;
+  }
+  .card {
+    min-height: 0;
+  }
+}

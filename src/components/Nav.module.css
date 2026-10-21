@@ -1,0 +1,118 @@
+.progress {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 2px;
+  z-index: 100;
+}
+.bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--blue), var(--violet));
+  transform-origin: left;
+  transform: scaleX(0);
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 80;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px var(--gutter);
+  background: linear-gradient(rgba(7, 8, 11, 0.92), rgba(7, 8, 11, 0));
+  pointer-events: none;
+}
+.nav > * {
+  pointer-events: auto;
+}
+
+.brand {
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  color: #fff;
+}
+
+.now {
+  color: #fff;
+  text-align: center;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.menuBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  font-size: 0.9rem;
+  padding: 6px 2px;
+}
+
+.menu {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  background: rgba(7, 8, 11, 0.96);
+  backdrop-filter: blur(14px);
+  padding: 96px var(--gutter) 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: auto;
+}
+.menu[hidden] {
+  display: none;
+}
+.menuOpen {
+  animation: menuIn 0.4s var(--ease);
+}
+@keyframes menuIn {
+  from {
+    clip-path: inset(0 0 100% 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.menu ol a {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  padding: 10px 0;
+  text-decoration: none;
+  border-bottom: 1px solid var(--line);
+  color: var(--mute);
+  transition: color 0.2s, padding-left 0.3s var(--ease);
+}
+.menu ol a:hover,
+.menu ol a[aria-current='location'] {
+  color: var(--bone);
+  padding-left: 12px;
+}
+.num {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  min-width: 2ch;
+}
+.ttl {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 4.6vw, 3.4rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+@media (max-width: 640px) {
+  .now {
+    display: none;
+  }
+}

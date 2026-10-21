@@ -1,0 +1,85 @@
+.wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  gap: clamp(32px, 6vw, 96px);
+  align-items: start;
+}
+
+.head {
+  position: sticky;
+  top: 18vh;
+}
+
+.title {
+  margin-top: 18px;
+  font-size: clamp(2.4rem, 5.4vw, 5.6rem);
+}
+
+.track {
+  position: relative;
+  padding-left: clamp(28px, 4vw, 56px);
+  display: grid;
+  gap: clamp(56px, 12vh, 140px);
+  padding-top: 8px;
+}
+
+.rail {
+  position: absolute;
+  left: 7px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--line);
+}
+
+.line {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(var(--blue), var(--violet));
+  transform-origin: top;
+}
+
+.stop {
+  position: relative;
+}
+
+.dot {
+  position: absolute;
+  left: calc(-1 * clamp(28px, 4vw, 56px));
+  top: 6px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid var(--blue);
+  background: var(--blue);
+}
+
+.period {
+  margin-bottom: 8px;
+}
+
+.body h3 {
+  font-size: clamp(1.4rem, 2.4vw, 2.2rem);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.org {
+  margin-top: 6px;
+  color: var(--blue-soft);
+}
+
+.note {
+  margin-top: 14px;
+  max-width: 52ch;
+  color: var(--mute);
+}
+
+@media (max-width: 899px) {
+  .wrap {
+    grid-template-columns: 1fr;
+  }
+  .head {
+    position: static;
+  }
+}

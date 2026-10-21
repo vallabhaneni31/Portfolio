@@ -1,0 +1,57 @@
+.wrap {
+  background: var(--graphite);
+}
+
+.title {
+  margin-top: 18px;
+  max-width: 15ch;
+}
+
+.cols {
+  margin-top: clamp(48px, 9vh, 110px);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(24px, 4vw, 64px);
+}
+.cols > div {
+  border-top: 1px solid var(--blue);
+  padding-top: 18px;
+}
+.cols h3 {
+  font-size: 1.5rem;
+}
+.cols p {
+  margin-top: 12px;
+  color: var(--mute);
+  max-width: 38ch;
+}
+
+.certs {
+  margin-top: clamp(64px, 12vh, 140px);
+}
+.certGrid {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(24px, 4vw, 64px);
+}
+.certGrid h4 {
+  font-size: 1.25rem;
+  color: var(--blue-soft);
+}
+.certGrid ul {
+  margin-top: 12px;
+  display: grid;
+  gap: 8px;
+}
+.certGrid li {
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+
+@media (max-width: 899px) {
+  .cols,
+  .certGrid {
+    grid-template-columns: 1fr;
+  }
+}

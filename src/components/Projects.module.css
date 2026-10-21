@@ -1,0 +1,235 @@
+.wrap {
+  background: var(--graphite);
+}
+
+.title {
+  margin-top: 18px;
+  max-width: 14ch;
+}
+
+.lede {
+  margin-top: 28px;
+  max-width: 56ch;
+  color: var(--mute);
+}
+
+.layout {
+  margin-top: clamp(40px, 8vh, 96px);
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+  gap: clamp(28px, 5vw, 80px);
+  align-items: start;
+}
+
+.index {
+  position: sticky;
+  top: 100px;
+  border-top: 1px solid var(--line);
+}
+.index li {
+  border-bottom: 1px solid var(--line);
+}
+.index button {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2.4ch 1fr;
+  column-gap: 14px;
+  align-items: baseline;
+  text-align: left;
+  padding: 16px 0;
+  color: var(--mute);
+  transition: color 0.25s, padding-left 0.35s var(--ease);
+}
+.index button:hover,
+.index button[aria-pressed='true'] {
+  color: var(--bone);
+  padding-left: 10px;
+}
+.index button[aria-pressed='true'] .idx {
+  color: var(--blue-soft);
+}
+.idx {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+}
+.ptitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 1.6vw, 1.5rem);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+.pk {
+  grid-column: 2;
+  margin-top: 2px;
+}
+
+.case {
+  min-width: 0;
+}
+.case h3 {
+  margin-top: 10px;
+  font-size: clamp(2rem, 4.2vw, 4rem);
+  letter-spacing: -0.03em;
+}
+
+.tabs {
+  margin-top: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 24px;
+  border-bottom: 1px solid var(--line);
+}
+.tabs button {
+  padding: 10px 0;
+  color: var(--mute);
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.tabs button[aria-selected='true'] {
+  color: var(--bone);
+  border-bottom-color: var(--blue);
+}
+
+.panel {
+  margin-top: 32px;
+  min-height: 280px;
+}
+
+.dl {
+  display: grid;
+  gap: 28px;
+}
+.dl dd {
+  margin-top: 8px;
+  max-width: 64ch;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.chips li {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  padding: 5px 10px;
+  border: 1px solid var(--line);
+  color: var(--blue-soft);
+}
+
+.arch {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  gap: clamp(24px, 4vw, 56px);
+  align-items: start;
+}
+
+.flow {
+  display: grid;
+}
+.flow li {
+  position: relative;
+  padding-bottom: 26px;
+}
+.flow li:last-child {
+  padding-bottom: 0;
+}
+.flow li:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 28px;
+  bottom: 0;
+  width: 2px;
+  height: 26px;
+  background: linear-gradient(180deg, var(--line) 0 40%, var(--blue) 50%, var(--line) 60% 100%);
+  background-size: 100% 200%;
+  animation: packet 2s linear infinite;
+}
+@keyframes packet {
+  from {
+    background-position: 0 100%;
+  }
+  to {
+    background-position: 0 -100%;
+  }
+}
+.flow button {
+  width: 100%;
+  display: flex;
+  gap: 14px;
+  align-items: baseline;
+  text-align: left;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  background: var(--ink);
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.15;
+  transition: border-color 0.25s, background 0.25s;
+}
+.flow button:hover {
+  border-color: var(--blue);
+}
+.flow button[aria-pressed='true'] {
+  border-color: var(--blue);
+  background: rgba(61, 123, 255, 0.14);
+}
+.fnum {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--blue-soft);
+  font-weight: 400;
+}
+
+.detail {
+  margin-top: 28px;
+  max-width: 58ch;
+  font-size: 1.15em;
+  min-height: 3.2em;
+}
+.note {
+  margin-top: 16px;
+}
+
+.decisions {
+  display: grid;
+  gap: 28px;
+}
+.decisions h4 {
+  font-size: 1.3rem;
+  letter-spacing: -0.015em;
+}
+.decisions p {
+  margin-top: 8px;
+  color: var(--mute);
+  max-width: 62ch;
+}
+
+.outcome {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+.outcome ul {
+  margin-top: 12px;
+  display: grid;
+  gap: 14px;
+}
+.outcome li {
+  padding-left: 16px;
+  border-left: 2px solid var(--blue);
+}
+
+@media (max-width: 899px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  .index {
+    position: static;
+  }
+  .outcome,
+  .arch {
+    grid-template-columns: 1fr;
+  }
+}

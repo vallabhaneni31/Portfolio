@@ -1,0 +1,41 @@
+.ring {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 95;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 12px;
+  height: 12px;
+  margin: -6px 0 0 -6px;
+  border: 1px solid rgba(232, 234, 240, 0.7);
+  border-radius: 50%;
+  pointer-events: none;
+  transition: width 0.3s var(--ease), height 0.3s var(--ease), margin 0.3s var(--ease), background 0.3s;
+}
+
+.on {
+  width: 36px;
+  height: 36px;
+  margin: -18px 0 0 -18px;
+  background: rgba(61, 123, 255, 0.18);
+  border-color: var(--blue-soft);
+}
+
+.hasLabel {
+  width: 76px;
+  height: 76px;
+  margin: -38px 0 0 -38px;
+}
+
+.text {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  color: var(--bone);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.hasLabel .text {
+  opacity: 1;
+}
